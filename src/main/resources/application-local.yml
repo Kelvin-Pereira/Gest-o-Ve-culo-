@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: Gestao de viatura
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:h2:mem:db;Mode=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS GESTAO
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  flyway:
+    url: jdbc:h2:mem:db;Mode=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS GESTAO
+    user: sa
+    password: sa
+    default-schema: GESTAO
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: false
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        default_schema: GESTAO
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      path: /h2
+      enabled: true
